@@ -1,5 +1,6 @@
 import {useState} from "react";
 import Header from "../componens/commons/Header";
+import Footer from "../componens/commons/Footer";
 
 function SimulasiKredit() {
     const [formData, setFormData] = useState({
@@ -94,8 +95,9 @@ function SimulasiKredit() {
     return (
         <div>
             <Header />
-            <main className="main-content">
+          
         {/* === KOLOM 1: FORM INPUT === */}
+        <div className="form-container">
         <section className="card form-section">
           <h2 className="section-title">Data Pengajuan</h2>
           <div className="form-grid">
@@ -145,7 +147,7 @@ function SimulasiKredit() {
             <thead>
               <tr>
                 <th>Tenor (Bulan)</th>
-                <th>Nominal Angsuran (Rp)</th>
+                <th>Nominal <br/> Angsuran (Rp)</th>
               </tr>
             </thead>
             <tbody>
@@ -158,13 +160,15 @@ function SimulasiKredit() {
               ))}
             </tbody>
           </table>
+        </section>
 
-          <h2 className="section-title mt-4">Pinjaman PT</h2>
+        <section className="card summary-section">
+          <h2 className="section-title">Pinjaman PT</h2>
           <table className="data-table">
             <thead>
               <tr>
                 <th>Tenor</th>
-                <th>Bunga per Bulan (Rp)</th>
+                <th>Bunga <br/>per Bulan (Rp)</th>
               </tr>
             </thead>
             <tbody>
@@ -214,9 +218,10 @@ function SimulasiKredit() {
             <span className="fw-bold">{result ? formatRupiah(result.terimaBersih) : 'Rp 0'}</span>
           </div>
         </section>
-
-      </main>
         </div>
+        <Footer/>
+        </div>
+        
     );
 }
 
