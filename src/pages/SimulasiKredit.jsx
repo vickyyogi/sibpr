@@ -121,15 +121,15 @@ function SimulasiKredit() {
             </div>
             <div className="input-group">
               <label>Biaya Provisi (%)</label>
-              <input type="number" name="biayaProvisi" value={formData.biayaProvisi} onChange={handleInputChange} />
+              <input type="number" name="biayaProvisi" step="0.01" value={formData.biayaProvisi} onChange={handleInputChange} />
             </div>
             <div className="input-group">
               <label>Angsuran Berjalan (Rp)</label>
-              <input type="number" name="angsuranBerjalan" value={formData.biayaAngsuranPertama} onChange={handleInputChange} />
+              <input type="number" name="biayaAngsuranPertama" value={formData.biayaAngsuranPertama} onChange={handleInputChange} />
             </div>
             <div className="input-group">
               <label>Pelunasan / Biaya Lain (Rp)</label>
-              <input type="number" name="pelunasanLain" value={formData.biayaLainnya} onChange={handleInputChange} />
+              <input type="number" name="biayaLainnya" value={formData.biayaLainnya} onChange={handleInputChange} />
             </div>
           </div>
           <div className="button-group">
@@ -194,19 +194,19 @@ function SimulasiKredit() {
           </div>
           <div className="summary-row">
             <span>Biaya Provisi:</span>
-            <span>{result ? `${formatRupiah(result.nominalProvisi)} (${result.provisi}%)` : 'Rp 0'}</span>
+            <span>{result ? `${formatRupiah(result.nominalProvisi)} (${result.pr}%)` : 'Rp 0'}</span>
           </div>
           <div className="summary-row">
             <span>Biaya Materai:</span>
             <span>{result ? formatRupiah(result.m) : 'Rp 0'}</span>
           </div>
           <div className="summary-row">
-            <span>Potongan Angsuran Ke-1:</span>
-            <span>{result ? formatRupiah(result.potonganAngsuran) : 'Rp 0'}</span>
+            <span>Potongan Angsuran/Bunga :</span>
+            <span>{result ? formatRupiah(result.ap) : 'Rp 0'}</span>
           </div>
           <div className="summary-row">
-            <span>Biaya lainnya / Pelunasan:</span>
-            <span>{result ? formatRupiah(result.pelunasanRp) : 'Rp 0'}</span>
+            <span>Biaya lainnya :</span>
+            <span>{result ? formatRupiah(result.bl) : 'Rp 0'}</span>
           </div>
           
           <div className="summary-total">
