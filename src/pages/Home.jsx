@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div>
             <Header />
-            <main className="main-content">
+            <main className="main-content h-screen flex flex-col items-center justify-center">
                 <h1 className="main-title">Welcome to BPR Adiartha Reksacitra</h1>
                 <p>This is the home page of our website.</p>
             </main>

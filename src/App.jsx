@@ -1,9 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./componens/commons/Header";
 import { Home, About, Contact, SimulasiKredit } from "./pages";
 
-//import SimulasiKredit from "./pages/SimulasiKredit";
 
 function App() {
   return (
